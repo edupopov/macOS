@@ -10,5 +10,5 @@ rm -fvR /Applications/Install\ macOS\ *.app
 # Baixar e instalar versão atualizada de macOS
 softwareupdate -a -i
 
-# Para instalar uma versão completautilize
+# Para instalar uma versão completa utilize
 softwareupdate --fetch-full-installer --full-installer-version 12.6
