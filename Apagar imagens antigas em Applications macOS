@@ -1,0 +1,4 @@
+# Utilize uma ferramenta de acesso remoto ou MDM para execução em volume
+# Antes de fazer o update é importante limpar imagens antigas para liberação de espaço em disco
+
+rm -fvR /Applications/Install\ macOS\ *.app
