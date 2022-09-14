@@ -1,0 +1,20 @@
+#!/bin/bash
+
+error_password="eDSAuthFailed"
+data_trocada=`date`
+file_validate="/Users/joaozinho/validate.txt"
+
+if [ -f "$file_validate" ]; then
+     echo "$file_validate existe."
+else
+     #Altera a senha do usuário Joaozinho
+     validate=`dscl . -passwd /Users/joaozinho '123456' '123Mudar$'`
+      if [[ $validate == *$error_password*  ]]; then
+      echo "Senha ja Trocada"
+      else
+      echo 'Senha trocada na data: '${data_trocada} >> /Users/joaozinho/validate.txt
+      user=$(python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");')
+      uid=$(id -u "$user")
+      launchctl asuser $uid /usr/bin/osascript -e  '(display dialog "Senha da conta Joaozinho alterada com sucesso !!!" buttons {"Ok"} default button 1 with title "Instalação Automática" with icon file "System:Library:CoreServices:CoreTypes.bundle:Contents:Resources:Sync.icns" giving up after 3)'
+     fi
+fi
