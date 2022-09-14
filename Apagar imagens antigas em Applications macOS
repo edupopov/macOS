@@ -4,4 +4,8 @@
 # Tipo - Modern Desktop [Linux and macOS]                                                       #
 #################################################################################################
 
+# Apagar resíduo de instalações anteriores
 rm -fvR /Applications/Install\ macOS\ *.app
+
+# Baixar e instalar versão atualizada de macOS
+softwareupdate -a -i
