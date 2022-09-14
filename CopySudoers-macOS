@@ -1,4 +1,6 @@
 # Copiar arquivo sudoers
+# Salve o arquivo sudoers dentro do diretório /tmp/sud/mac
+# Use um MDM para essa cópia e depois execute o script .sh
 
 #!/bin/bash
 
