@@ -1,0 +1,5 @@
+# Copiar arquivo sudoers
+
+#!/bin/bash
+
+cp -f /tmp/sud/mac /etc/sudoers.d/
