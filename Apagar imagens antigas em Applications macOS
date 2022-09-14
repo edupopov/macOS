@@ -1,4 +1,7 @@
-# Utilize uma ferramenta de acesso remoto ou MDM para execução em volume
-# Antes de fazer o update é importante limpar imagens antigas para liberação de espaço em disco
+#################################################################################################
+# Utilize uma ferramenta de acesso remoto ou MDM para execução em volume                        #
+# Antes de fazer o update é importante limpar imagens antigas para liberação de espaço em disco #
+# Tipo - Modern Desktop [Linux and macOS]                                                       #
+#################################################################################################
 
 rm -fvR /Applications/Install\ macOS\ *.app
