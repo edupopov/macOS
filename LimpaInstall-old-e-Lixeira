@@ -1,9 +1,5 @@
 #### Limpeza de Disco - arquivos antigos e lixeira ##### 
-
 rm -fvR /Users/local-user01/Desktop/* 
-
 rm -fvR /Users/CURRENT_USER/.Trash/* 
-
 rm -fvR /Applications/MacOSBigSur.dmg 
-
-rm -fvR /Applications/Install\ macOS\*.app 
+rm -fvR /Applications/Install\ macOS\*.app
