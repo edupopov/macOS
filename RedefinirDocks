@@ -1,0 +1,4 @@
+# Clique na opção "Ir" no menu e visite a pasta "Utilitários".
+# Aqui você pode ver todas as ferramentas utilitárias do seu Mac, Basta iniciar o aplicativo do Terminal.
+# Agora digite os seguintes comandos no Terminal e pressione enter:defaults delete com.apple.dock; killall Dock
+# Feche o Terminal e tente acessar a pasta Downloads no dock novamente.
