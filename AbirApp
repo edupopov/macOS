@@ -1,0 +1,2 @@
+# Para abrir um aplicativo, use o comando open:
+% open -a MyProg.app
