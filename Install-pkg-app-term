@@ -1,0 +1,2 @@
+# Instalar aplicações .pkg por terminal
+sudo installer -pkg /tmp/aplicacao.pkg -target
