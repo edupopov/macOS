@@ -1,2 +1,10 @@
 # Instalar aplicações .pkg por terminal
-sudo installer -pkg /tmp/aplicacao.pkg -target
+sudo installer -pkg /tmp/aplicacao.pkg -target /
+
+# Examples:
+#	installer -pkg InstallMe.pkg -target CurrentUserHomeDirectory
+#	installer -pkg InstallMe.pkg -target '/Volumes/Macintosh HD2' -lang ja
+#	installer -volinfo -pkg InstallMe.pkg
+#	installer -pkginfo -pkg InstallMe.pkg
+#	installer -query RestartAction -pkg InstallMe.pkg
+#	installer -pkg InstallMe.pkg -target / -showChoicesXML
