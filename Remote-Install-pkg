@@ -1,0 +1,5 @@
+# Instalação remota
+# Faça a conexão ssh e copie o arquivo para a /tmp/
+unzip -o /tmp/PACOTE.zip -d /tmp/
+chmod 754 /tmp/PACOTE/arquivo.pkg
+installer -pkg /tmp/PACOTE/arquivo.pkg -target /usr/local/bin
