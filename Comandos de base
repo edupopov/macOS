@@ -1,0 +1,14 @@
+# Aqui temos comandos úteis que podem ser utilizados no macos no dia a dia
+
+# Identificar versão do sistema - release atual
+uname -r
+
+# O comando uname exibe certos recursos do sistema operacional em execução em sua máquina. Por padrão, ele simplesmente exibe o nome do sistema operacional.
+uname
+
+# Mostre quem está logado e o que está fazendo.
+w
+
+# O comando who exibe uma lista de usuários atualmente conectados ao sistema local em detalhes
+who
+
