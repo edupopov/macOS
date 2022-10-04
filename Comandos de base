@@ -12,3 +12,16 @@ w
 # O comando who exibe uma lista de usuários atualmente conectados ao sistema local em detalhes
 who
 
+# Tempo de funcionamento do sistema (sem reboot ou desligamento)
+uptime
+
+# Mostra quantos usuários estão criados
+users
+
+# Data atual do sistema
+date
+
+# Data abreviada
+date '+%a %h %d %n %T %y'
+
+#
