@@ -1,0 +1,5 @@
+# Lista volumes em seu respectivo disco
+diskutil apfs list
+
+# Adiciona usuario a base de criptografia 
+fdesetup add -usertoadd conta-do-usuario
