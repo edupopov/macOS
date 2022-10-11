@@ -1,0 +1,10 @@
+# Para identificar usuários locais e/ou usuários de domínio
+# Se o retorno for usuários staff estamos falando de uma conta local
+# Contas de domínio retornam o domínio\Domain Users
+
+ls -lha /Users
+
+# Você pode direcionar a pesquisa usando o dscl
+# O comando abaixo apresenta a autoridade autenticadora quando esta em domínio e não retorna nada quando for uam conta local
+
+dscl . read /Users/ContaDoUsuario | grep OriginalAuthenticationAuthority
