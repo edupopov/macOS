@@ -24,4 +24,5 @@ date
 # Data abreviada
 date '+%a %h %d %n %T %y'
 
-# 
+# Ativa e desativa arquivos ocultos no macOS
+shift + ommand + .
