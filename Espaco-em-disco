@@ -1,0 +1,17 @@
+# Informações de disco
+diskutil info -all
+
+# Informações de espaço e partições
+df -h
+
+# Informações de espaço em disco por biblioteca
+du -sh * 
+
+# Informações de espaço em disco ocupado pelo diretório home do usuário
+du -sh ~ 
+
+# Este comando é útil para ver os volumes APFS, todos os quais compartilham o mesmo espaço livre no disco virtual /dev/disk1 que o contém:
+diskutil list virtual
+
+# Espaço em disco
+df -H
