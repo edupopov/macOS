@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Script de instalação do cliente do Inteligent Hub Atualizado
+
+#Limpar DNS
+cd /tmp
+killall -9 -m mDNSResponder
+
+# Download VMWare Inteligent HUB
+link_hub="https://packages.vmware.com/wsone/VMWareWorkspaceONEIntelligentHub.pkg"
+proxy="http://serverproxy:8080"
+folder_download="/tmp"
+name_pkg="VMWareWorkspaceONEIntelligentHub.pkg"
+
+# Download Inteligent Hub
+if [-f $folder_download/$name_pkg]; then rm -rf $folder_download/$name_pkg; fi
+sleep 5
+curl -Ls $link_hub --proxy $proxy --output $folder_download/$name_pkg
+
+# Permissão e instalação
+chmod 754 /tmp/VMwareWorkspaceONEIntelligentHub.pkg
+installer -pkg /tmp/VMwareWorkspaceONEIntelligentHub.pkg -target /usr/local/bin
