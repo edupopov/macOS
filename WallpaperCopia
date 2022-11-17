@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ -f "/Users/Shared/iConfigurations/wallpaper.heic " ] ; then
+  echo "Done"
+ else
+ 
+ if [ ! -s "/Users/Shared/iConfigurations/" ] ; then
+  mkdir /Users/Shared/iConfigurations/
+  cp /tmp/copawall/wallpaper.heic /Users/Shared/iConfigurations/
+ else
+  cp /tmp/copwall/wallpaper.heic /Users/Shared/iConfigurations/
+  
+ fi
+ 
+ fi
