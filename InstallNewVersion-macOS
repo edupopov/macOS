@@ -20,7 +20,7 @@ rm -fvR /Applications/MacOSBigSur.dmg
 rm -fvR /Applications/Install\ macOS\*.app 
 
 #### Processo download, ajuste vpn e upgrade S.O #### 
-softwareupdate --fetch-full-installer --full-installer-version 12.6
+softwareupdate --fetch-full-installer --full-installer-version 13.0.1
 
 sleep 1 
 
