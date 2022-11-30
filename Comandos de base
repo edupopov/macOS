@@ -1,5 +1,8 @@
 # Aqui temos comandos úteis que podem ser utilizados no macos no dia a dia
 
+# Comando para validar dns de um endereço
+dig www.eduardopopovici.com
+
 # Identificar versão do sistema - release atual
 uname -r
 
