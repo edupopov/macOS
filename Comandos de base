@@ -2,6 +2,8 @@
 
 # Comando para validar dns de um endereço
 dig www.eduardopopovici.com
+dig ns www.eduardopopovici.com
+dig txt www.eduardopopovici.com
 
 # Identificar versão do sistema - release atual
 uname -r
