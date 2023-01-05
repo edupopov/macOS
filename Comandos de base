@@ -31,3 +31,10 @@ date '+%a %h %d %n %T %y'
 
 # Ativa e desativa arquivos ocultos no macOS
 shift + ommand + .
+
+# Listar impressoras
+ls -la /Library/Printers
+
+# Listar metodo de autenticação - Kerberos credentials
+# REF - https://www.unix.com/man-page/osx/1/KLIST/
+klist
