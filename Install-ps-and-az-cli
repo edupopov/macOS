@@ -1,0 +1,16 @@
+# REF https://brew.sh/index_pt-br
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install --cask powershell
+pwsh
+brew update
+brew upgrade powershell --cask
+brew tap homebrew/cask-versions
+
+# Install Azure Cli REF https://learn.microsoft.com/pt-br/cli/azure/install-azure-cli-macos
+brew update && brew install python@3.10 && brew upgrade python@3.10
+brew link --overwrite python@3.10
+brew update && brew install azure-cli
+
+# Blocos de Proxy
+# https://formulae.brew.sh
+# https://homebrew.bintray.com
