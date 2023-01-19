@@ -1,0 +1,11 @@
+#!/bin/bash 
+export CURRENT_USER=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ { print $3 }' ) 
+softwareupdate --fetch-full-installer --full-installer-version 12.6.2 
+sleep 3 
+killall -m Install macOS Monterey 
+url_vpn_old='vpn' 
+url_vpn_new='bigsur' 
+file_anyconnect=/Users/$CURRENT_USER/.anyconnect 
+rm -fv /opt/cisco/anyconnect/profile/*.xml 
+sed -i '' "s/$url_vpn_old/$url_vpn_new/g" $file_anyconnect 
+/Applications/Install\ macOS\ Monterey.app/Contents/Resources/startosinstall --agreetolicense --forcequitapps 
