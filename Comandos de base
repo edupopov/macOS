@@ -23,6 +23,9 @@ softwareupdate -a -i
 # Executar instalador de versão macOS por terminal - Monterey - Aceita os termos e licença e força encerramento de aplicações
 /Applications/Install\ macOS\ Monterey.app/Contents/Resources/startosinstall --agreetolicense --forcequitapps 
 
+# Acompanhar processo de instalação
+ps aux | grep -i softwareupdade
+
 # Identificar versão do sistema - release atual
 uname -r
 
