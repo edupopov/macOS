@@ -59,3 +59,12 @@ ls -la /Library/Printers
 # Listar metodo de autenticação - Kerberos credentials
 # REF - https://www.unix.com/man-page/osx/1/KLIST/
 klist
+
+# Conectar SSH (quando seu macOS esta com o recurso habilitado)
+usuario@ip-do-macOC-na-rede
+
+# Apagar hashs de conexão - útil para perda de sessão e corrompimento
+rm -fvR /Users/usuario/.ssh/known_hosts
+
+# Validar arquivo de hashs ssh
+cat know_hosts  
