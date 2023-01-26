@@ -5,6 +5,21 @@ dig www.eduardopopovici.com
 dig ns www.eduardopopovici.com
 dig txt www.eduardopopovici.com
 
+# Listar atualizações de software
+softwareupdate --list-full-installers
+
+# Qual é a versão de sistema operacional do macOS
+sw_version
+
+# Atualizar/Instalar versões mais atuais do macOS
+softwareupdate --fetch-full-installer --full-installer-version 12.6.1 
+
+# Buscar a versão mais atualizada de seu macOS - Ex. Atualiza seu Bigsur ou Ventura - é baseado na versão instalada 
+softwareupdate -a -i 
+
+# Executar instalador de versão macOS por terminal - Monterey - Aceita os termos e licença e força encerramento de aplicações
+/Applications/Install\ macOS\ Monterey.app/Contents/Resources/startosinstall --agreetolicense --forcequitapps 
+
 # Identificar versão do sistema - release atual
 uname -r
 
