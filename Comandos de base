@@ -15,7 +15,7 @@ sw_vers
 softwareupdate --fetch-full-installer --full-installer-version 12.6.1 
 
 # Executar a instalação em linha de comando ou por conexão SSH
-/Applications/Install\ macOS\ Monterey.app/Contents/Resources/startosinstall --agreetolicense --forcequitapps --passprompt —reboot delay 300
+/Applications/Install\ macOS\ Monterey.app/Contents/Resources/startosinstall --agreetolicense --forcequitapps --passprompt —-rebootdelay 300
 
 # Buscar a versão mais atualizada de seu macOS - Ex. Atualiza seu Bigsur ou Ventura - é baseado na versão instalada 
 softwareupdate -a -i 
