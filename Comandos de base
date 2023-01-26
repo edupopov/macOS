@@ -29,6 +29,12 @@ ps aux | grep -i softwareupdade
 # Identificar versão do sistema - release atual
 uname -r
 
+# Listar discos e pontos de montagem
+diskutil list
+
+# Listar o que o usuário esta usando
+lsof -u usuário
+
 # O comando uname exibe certos recursos do sistema operacional em execução em sua máquina. Por padrão, ele simplesmente exibe o nome do sistema operacional.
 uname
 
