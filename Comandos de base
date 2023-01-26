@@ -11,8 +11,11 @@ softwareupdate --list-full-installers
 # Qual é a versão de sistema operacional do macOS
 sw_version
 
-# Atualizar/Instalar versões mais atuais do macOS
+# Baixar e Atualizar/Instalar versões mais atuais do macOS
 softwareupdate --fetch-full-installer --full-installer-version 12.6.1 
+
+# Executar a instalação em linha de comando ou por conexão SSH
+/Applications/Install\ macOS\ Monterey.app/Contents/Resources/startosinstall --agreetolicense --forcequitapps --passprompt —reboot delay 300
 
 # Buscar a versão mais atualizada de seu macOS - Ex. Atualiza seu Bigsur ou Ventura - é baseado na versão instalada 
 softwareupdate -a -i 
