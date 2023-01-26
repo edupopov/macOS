@@ -1,6 +1,6 @@
 #!/bin/bash 
 export CURRENT_USER=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ { print $3 }' ) 
-softwareupdate --fetch-full-installer --full-installer-version 12.6.2 
+softwareupdate --fetch-full-installer --full-installer-version 12.6.3
 sleep 3 
 killall -m Install macOS Monterey 
 url_vpn_old='vpn' 
