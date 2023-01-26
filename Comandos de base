@@ -9,7 +9,7 @@ dig txt www.eduardopopovici.com
 softwareupdate --list-full-installers
 
 # Qual é a versão de sistema operacional do macOS
-sw_version
+sw_vers
 
 # Baixar e Atualizar/Instalar versões mais atuais do macOS
 softwareupdate --fetch-full-installer --full-installer-version 12.6.1 
