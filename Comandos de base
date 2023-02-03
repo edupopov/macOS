@@ -69,6 +69,9 @@ klist
 # Conectar SSH (quando seu macOS esta com o recurso habilitado)
 usuario@ip-do-macOC-na-rede
 
+# Copiar arquivo por ssh para a pasta tmp
+scp arquivo.zip usuario@ip-do-usuario:/tmp/
+
 # Apagar hashs de conexão - útil para perda de sessão e corrompimento
 rm -fvR /Users/usuario/.ssh/known_hosts
 
