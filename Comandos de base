@@ -12,7 +12,7 @@ softwareupdate --list-full-installers
 sw_vers
 
 # Baixar e Atualizar/Instalar versões mais atuais do macOS
-softwareupdate --fetch-full-installer --full-installer-version 12.6.1 
+softwareupdate --fetch-full-installer --full-installer-version 12.6.3
 
 # Executar a instalação em linha de comando ou por conexão SSH
 /Applications/Install\ macOS\ Monterey.app/Contents/Resources/startosinstall --agreetolicense --forcequitapps --passprompt —-rebootdelay 300
