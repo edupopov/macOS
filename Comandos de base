@@ -5,6 +5,9 @@ dig www.eduardopopovici.com
 dig ns www.eduardopopovici.com
 dig txt www.eduardopopovici.com
 
+# Listar interfaces de rede
+networksetup -listallnetworkservices
+
 # Listar atualizações de software
 softwareupdate --list-full-installers
 
