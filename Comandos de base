@@ -13,6 +13,11 @@ softwareupdate --list-full-installers
 
 # Qual é a versão de sistema operacional do macOS
 sw_vers
+sw_vers -productName
+sw_vers -productVersion
+
+# Quem sou eu (usuário logado)
+whoami
 
 # Baixar e Atualizar/Instalar versões mais atuais do macOS
 softwareupdate --fetch-full-installer --full-installer-version 12.6.3
