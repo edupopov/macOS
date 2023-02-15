@@ -8,6 +8,9 @@ dig txt www.eduardopopovici.com
 # Listar interfaces de rede
 networksetup -listallnetworkservices
 
+# Limpar cache de DNS
+killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache
+
 # Listar atualizações de software
 softwareupdate --list-full-installers
 
@@ -33,6 +36,10 @@ softwareupdate -a -i
 
 # Acompanhar processo de instalação
 ps aux | grep -i softwareupdade
+
+# Listando serviços do symantec
+ps gx | grep 'Symantec'
+killall 'symantec'
 
 # Identificar versão do sistema - release atual
 uname -r
