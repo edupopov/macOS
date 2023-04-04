@@ -1,94 +1,267 @@
-# Aqui temos comandos úteis que podem ser utilizados no macos no dia a dia
-
-# Comando para validar dns de um endereço
+# Comando para validar dns de um endereço	
+dig ns eduardopopovici.com
 dig www.eduardopopovici.com
-dig ns www.eduardopopovici.com
 dig txt www.eduardopopovici.com
 
-# Listar interfaces de rede
-networksetup -listallnetworkservices
-
+# Listar interfaces de rede	networksetup -listallnetworkservices
 # Limpar cache de DNS
 killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache
 
-# Listar atualizações de software
-softwareupdate --list-full-installers
-
-# Qual é a versão de sistema operacional do macOS
+# Listar atualizações de software	softwareupdate --list-full-installers
+# Qual é a versão de sistema operacional do macOS	
 sw_vers
 sw_vers -productName
 sw_vers -productVersion
 
-# Quem sou eu (usuário logado)
-whoami
+# Quem sou eu (usuário logado)	whoami
+# Baixar e Atualizar/Instalar versões específicas do macOS	softwareupdate --fetch-full-installer --full-installer-version 13.2.1
+# Executar a instalação em linha de comando ou por conexão SSH	/Applications/Install\ macOS\ Monterey.app/Contents/Resources/startosinstall --agreetolicense --forcequitapps --passprompt --rebootdelay 300
+# Buscar a versão próxima de seu macOS instalado.	softwareupdate -a -i
+# Acompanhar processo de instalação	ps aux | grep -i softwareupdade
 
-# Baixar e Atualizar/Instalar versões mais atuais do macOS
-softwareupdate --fetch-full-installer --full-installer-version 12.6.3
-
-# Executar a instalação em linha de comando ou por conexão SSH
-/Applications/Install\ macOS\ Monterey.app/Contents/Resources/startosinstall --agreetolicense --forcequitapps --passprompt —-rebootdelay 300
-
-# Buscar a versão mais atualizada de seu macOS - Ex. Atualiza seu Bigsur ou Ventura - é baseado na versão instalada 
-softwareupdate -a -i 
-
-# Executar instalador de versão macOS por terminal - Monterey - Aceita os termos e licença e força encerramento de aplicações
-/Applications/Install\ macOS\ Monterey.app/Contents/Resources/startosinstall --agreetolicense --forcequitapps 
-
-# Acompanhar processo de instalação
-ps aux | grep -i softwareupdade
-
-# Listando serviços do symantec
+# Listando (e matando) serviços do symantec
 ps gx | grep 'Symantec'
 killall 'symantec'
 
-# Identificar versão do sistema - release atual
-uname -r
+# Listando serviços do DLP Broadcom	
+ps aux | grep edpa | grep -v grep
 
-# Listar discos e pontos de montagem
-diskutil list
-
-# Listar o que o usuário esta usando
-lsof -u usuário
-
-# O comando uname exibe certos recursos do sistema operacional em execução em sua máquina. Por padrão, ele simplesmente exibe o nome do sistema operacional.
-uname
-
-# Mostre quem está logado e o que está fazendo.
-w
-
-# O comando who exibe uma lista de usuários atualmente conectados ao sistema local em detalhes
-who
-
-# Tempo de funcionamento do sistema (sem reboot ou desligamento)
-uptime
-
-# Mostra quantos usuários estão criados
-users
-
-# Data atual do sistema
-date
-
-# Data abreviada
-date '+%a %h %d %n %T %y'
-
-# Ativa e desativa arquivos ocultos no macOS
-shift + ommand + .
-
-# Listar impressoras
-ls -la /Library/Printers
-
+# Identificar versão do sistema - release atual	uname -r
+# Listar arquivos ocultos no /	ls -laO /
+# Listar discos e pontos de montagem	diskutil list
+# Listar o que o usuário esta usando	lsof -u usuário
+# O comando uname exibe certos recursos do sistema operacional em execução em sua máquina. Por padrão, ele simplesmente exibe o nome do sistema operacional.	uname
+# Mostre quem está logado e o que está fazendo.	w
+# O comando who exibe uma lista de usuários atualmente conectados ao sistema local em detalhes	who
+# Tempo de funcionamento do sistema (sem reboot ou desligamento)	uptime
+# Mostra quantos usuários estão criados	users
+# Data atual do sistema	date
+# Data abreviada	date '+%a %h %d %n %T %y'
+# Ativa e desativa arquivos ocultos no macOS	shift + command + .
+# Listar impressoras	ls -la /Library/Printers
 # Listar metodo de autenticação - Kerberos credentials
-# REF - https://www.unix.com/man-page/osx/1/KLIST/
-klist
+# REF - https://www.unix.com/man-page/osx/1/KLIST/	klist
+# Lista informações kerberos	klist -v
+# Conectar SSH (quando seu macOS esta com o recurso habilitado)	ssh usuario@ip-do-macOC-na-rede
+# Limpeza do cache kerberos	/usr/bin/kdestroy -A
+# Copiar arquivo por ssh para a pasta tmp	scp arquivo.zip usuario@ip-do-usuario:/tmp/
+# Apagar hashs de conexão - útil para perda de sessão e corrompimento	rm -fvR /Users/usuario/.ssh/known_hosts
+# Validar arquivo de hashs ssh	cat know_hosts
+# Mostra os comandos utilizados	history
+# Apaga o registro de comando da linha 457 do history	 history -d 457
+# Como listar uma aplicação pelo macOS (o teams por exemplo)	
+mdfind -name teams
 
-# Conectar SSH (quando seu macOS esta com o recurso habilitado)
-usuario@ip-do-macOC-na-rede
+# Limpar cache DNS	
+sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache 
+killall -9 -m mDNSResponder
 
-# Copiar arquivo por ssh para a pasta tmp
-scp arquivo.zip usuario@ip-do-usuario:/tmp/
+# Lista volumes em seu respectivo disco	diskutil apfs list
+# Adiciona usuario a base de criptografia	fdesetup add -usertoadd conta-do-usuario
+# Reboot macOS	sudo shutdown -r now
 
-# Apagar hashs de conexão - útil para perda de sessão e corrompimento
-rm -fvR /Users/usuario/.ssh/known_hosts
+# Limpeza de Disco - arquivos antigos e lixeira	
+rm -fvR /Users/local-user01/Desktop/* 
+rm -fvR /Users/CURRENT_USER/.Trash/* 
+rm -fvR /Applications/MacOSBigSur.dmg 
+rm -fvR /Applications/Install\ macOS\*.app
 
-# Validar arquivo de hashs ssh
-cat know_hosts  
+# Permissionamento e instalação InteligentHub	
+chmod 754 /tmp/VMwareWorkspaceONEIntelligentHub.pkg
+installer -pkg /tmp/VMwareWorkspaceONEIntelligentHub.pkg -target /usr/local/bin
+# Atualização manual de pré-inicialização (pré boot)	diskutil apfs updatePreboot / 
+# Mostra a qualidade de conexão	networkQuality
+# Identificando o proxy que você esta usando	proxy=$(scutil --proxy | grep ProxyAutoConfigURLString | awk -F ' ' '{print $3}'); echo $proxy
+# Instalar macOS Ventura	/Applications/Install\ macOS\ Ventura.app/Contents/Resources/startosinstall --agreetolicense --nointeraction --forcequitapps 
+# Instalar macOS Monterey 	/Applications/Install\ macOS\ Monterey.app/Contents/Resources/startosinstall --agreetolicense --nointeraction --forcequitapps 
+
+Atalhos de teclado do Mac
+Ao pressionar determinadas combinações de teclas, você pode fazer coisas que normalmente precisam de um mouse, trackpad ou outro dispositivo de entrada.
+
+Para usar um atalho de teclado, mantenha pressionada uma ou mais teclas modificadoras e pressione a última tecla do atalho. Por exemplo, para usar o atalho Command + C (copiar), mantenha a tecla Command pressionada, pressione a tecla C e solte-as. Os menus e teclados do Mac geralmente usam símbolos para determinadas teclas, inclusive para as teclas modificadoras:
+
+Command (ou Cmd) ⌘
+Shift ⇧
+
+Option (ou Alt) ⌥
+Control (ou Ctrl) ⌃
+
+Caps Lock ⇪
+Fn 
+
+Nos teclados feitos para PCs com Windows, use a tecla Alt em vez de Option e a tecla de logotipo do Windows em vez de Command.
+
+Algumas teclas de alguns teclados Apple têm símbolos e funções especiais, como brilho da tela , brilho do teclado , entre outros. Se essas funções não estiverem disponíveis em seu teclado, você poderá reproduzir algumas delas ao criar seus próprios atalhos de teclado. Para usar essas teclas como F1, F2, F3 ou outras teclas padrão de função, combine-as com a tecla Fn.
+
+Cortar, copiar, colar e outros atalhos comuns
+
+Command + X: corte o item selecionado e copie-o para a área de transferência.
+Command + C: copie o item selecionado para a área de transferência. Esse atalho também funciona para arquivos no Finder.
+Command + V: cole o conteúdo da área de transferência no app ou documento atual. Esse atalho também funciona para arquivos no Finder.
+Command + Z: desfaça o comando anterior. Em seguida, você pode pressionar Shift + Command + Z para Refazer, revertendo o comando Desfazer. Em alguns apps, você pode desfazer e refazer vários comandos.
+Command + A: selecione todos os itens.
+Command + F: encontre os itens em um documento ou abra uma janela do Finder.
+Command + G: Buscar novamente — Encontre a próxima ocorrência do item encontrado anteriormente. Para encontrar a ocorrência anterior, pressione Shift + Command + G.
+Command + H: oculte as janelas do app em primeiro plano. Para exibir o app em primeiro plano e ocultar todos os outros apps, pressione Option + Command + H.
+Command + M: minimize a janela em primeiro plano no Dock. Para minimizar todas as janelas do app em primeiro plano, pressione Option + Command + M.
+Command + O: abra o item selecionado ou abra uma caixa de diálogo para selecionar um arquivo para abrir.
+Command + P: imprima o documento atual.
+Command + S: salve o documento atual.
+Command + T: abra uma nova aba.
+Command + W: feche a janela em primeiro plano. Para fechar todas as janelas do app, pressione Option + Command + W.
+Option + Command + Esc: force o encerramento de um app.
+Command + barra de espaço: mostre ou oculte o campo de busca do Spotlight. Para realizar uma busca do Spotlight em uma janela do Finder, pressione Command + Option + barra de espaço. (Se você usar várias fontes de entrada para digitar em idiomas diferentes, esses atalhos alterarão as fontes de entrada em vez de exibir o Spotlight. Saiba como alterar um atalho de teclado em conflito.)
+Control + Command + barra de espaço:: mostre o "Visualizador de Caracteres", em que é possível selecionar emoji e outros símbolos.
+Control + Command + F: use o app em tela cheia, caso esse recurso seja compatível.
+Barra de espaço: use a Visualização Rápida para pré-visualizar o item selecionado.
+Command + Tab: alterne para o próximo app usado mais recentemente entre os apps abertos. 
+Command + acento grave (`): alterne entre as janelas do app que você está usando. (O caractere na segunda tecla varia de acordo com o teclado. Geralmente é a tecla acima da tecla Tab e à esquerda do número 1.)
+Shift + Command + 5: no macOS Mojave ou posterior, faça uma captura ou gravação da tela. Ou pressione Shift + Command + 3 ou Shift + Command + 4 para fazer capturas de tela. Saiba mais sobre capturas de tela.
+Shift + Command + N: crie uma pasta no Finder.
+Command + vírgula (,): abra as preferências do app em primeiro plano.
+Atalhos para entrar em repouso, finalizar sessão e desligar
+Talvez você precise manter pressionados alguns dos atalhos abaixo por mais tempo do que outros. Isso ajuda a evitar que eles sejam usados acidentalmente.
+
+Botão liga/desliga: pressione para ligar o Mac ou despertá-lo do modo de repouso. Pressione e segure por 1,5 segundo para colocá-lo em repouso.* Continue pressionando o botão para forçar o desligamento do Mac.
+Option + Command + botão liga/desliga* ou Option + Command + Media Eject : coloque o Mac em repouso.
+Control + Shift + botão liga/desliga* ou Control + Shift + Media Eject : coloque as telas em repouso.
+Control + botão liga/desliga* ou Control + Media Eject: abra uma caixa de diálogo perguntando se você deseja reiniciar ou desligar o computador ou colocá-lo em repouso.
+Control + Command + botão liga/desliga*: force a reinicialização do Mac sem precisar salvar documentos abertos e não salvos.
+Control + Command + Media Eject : encerre todos os apps e, em seguida, reinicie o Mac. Se algum documento aberto tiver alterações não salvas, o sistema perguntará se você deseja salvá-las.
+Control + Option + Command + botão liga/desliga* ou Control + Option + Command + Media Eject: encerre todos os apps e desligue o Mac. Se algum documento aberto tiver alterações não salvas, o sistema perguntará se você deseja salvá-las.
+Control + Command + Q: bloqueie imediatamente a tela.
+Shift + Command + Q: finalize a sessão da conta de usuário do macOS. Você precisará confirmar. Para encerrar imediatamente sem confirmar, pressione Option + Shift + Command + Q.
+* Não se aplica ao sensor Touch ID.
+
+Atalhos do Finder e do sistema
+Command + D: duplique os arquivos selecionados.
+Comando + E: ejete o disco ou volume selecionado.
+Comando + F: inicie uma busca do Spotlight na janela do Finder.
+Command + I: mostre a janela Obter Informações de um arquivo selecionado.
+Command + R: (1) quando um alias é selecionado no Finder: mostre o arquivo original para o alias selecionado. (2) Em alguns apps, como Calendário ou Safari, atualize ou recarregue a página. (3) Em "Atualização de Software", verifique se há atualizações de software novamente.
+Shift + Command + C: abra a janela Computador.
+Shift + Command + D: abra a pasta Mesa.
+Shift + Command + F: abra a janela Recentes, mostrando todos os arquivos que você visualizou ou alterou recentemente.
+Shift + Command + G: abra a janela "Ir Para a Pasta".
+Shift + Command + H: abra a pasta pessoal da conta de usuário atual do macOS.
+Shift + Command + I: abra o iCloud Drive.
+Shift + Command + K: abra a janela Rede.
+Option + Command + L: abra a pasta Transferências.
+Shift + Command + N: crie uma pasta.
+Shift + Command + O: abra a pasta Documentos.
+Shift + Command + P: mostre ou oculte o painel Pré-Visualização nas janelas do Finder.
+Shift + Command + R: abra a janela AirDrop.
+Shift + Command + T: mostre ou oculte a barra de abas nas janelas do Finder.
+Control + Shift + Command + T: adicione o item selecionado do Finder ao Dock (OS X Mavericks ou posterior)
+Shift + Command + U: abra a pasta Utilitários.
+Option + Command + D: mostre ou oculte o Dock. 
+Control + Command + T: adicione o item selecionado à barra lateral (OS X Mavericks ou posterior).
+Option + Command + P: oculte ou mostre a barra de caminho nas janelas do Finder.
+Option + Command + S: oculte ou mostre a barra lateral nas janelas do Finder.
+Command + barra (/): oculte ou mostre a barra de status nas janelas do Finder.
+Command + J: mostre as "Opções de Visualização".
+Command + K: abra a janela "Conectar ao Servidor".
+Control + Command + A: crie um alias do item selecionado.
+Command + N: abra uma nova janela do Finder.
+Option + Command + N: crie uma nova Pasta Inteligente.
+Command + T: mostre ou oculte a barra de abas quando somente uma aba está aberta na janela atual do Finder.
+Option + Command + T: mostre ou oculte a barra de ferramentas quando somente uma aba está aberta na janela atual do Finder.
+Option + Command + V: mova os arquivos na área de transferência do local original para o local atual.
+Command + Y: use a Visualização Rápida para pré-visualizar os arquivos selecionados.
+Option + Command + Y: acesse uma apresentação de slides da Visualização Rápida dos arquivos selecionados.
+Command + 1: veja os itens na janela do Finder como ícones.
+Command + 2: veja os itens em uma janela do Finder em lista.
+Command + 3: veja os itens em uma janela do Finder em colunas. 
+Command + 4: veja os itens em uma janela do Finder em galeria.
+Command + colchete esquerdo ([): acesse a pasta anterior.
+Command + colchete direito (]): acesse a próxima pasta.
+Command + seta para cima: abra a pasta que contém a pasta atual.
+Command + Control + seta para cima: abra a pasta que contém a pasta atual em uma nova janela.
+Command + seta para baixo: abra o item selecionado.
+Seta para a direita: abra a pasta selecionada. Esse atalho funciona apenas na visualização por lista.
+Seta para a esquerda: feche a pasta selecionada. Esse atalho funciona apenas na visualização por lista.
+Command + Delete: mova o item selecionado para o Lixo.
+Shift + Command + Delete: esvazie o Lixo.
+Option + Shift + Command + Delete: esvazie o Lixo sem uma caixa de diálogo de confirmação.
+Command + diminuir brilho: ative ou desative o espelhamento de vídeo quando o Mac estiver conectado a mais de uma tela.
+Option + aumentar brilho: abra as preferências Monitores. Esse atalho funciona com qualquer uma das teclas de brilho.
+Control + aumentar brilho ou Control + diminuir brilho: altere o brilho da tela externa, caso esse recurso seja compatível com a tela.
+Option + Shift + aumentar brilho ou Option + Shift + diminuir brilho: ajuste o brilho da tela em etapas menores. Adicione a tecla Control a esse atalho para fazer o ajuste na tela externa, caso esse recurso seja compatível com ela.
+Option + Mission Control: abra as preferências Mission Control.
+Command + Mission Control: mostre a mesa. 
+Control + seta para baixo: mostre todas as janelas do app em primeiro plano.
+Option + aumentar volume: abra as preferências Som. Esse atalho funciona com qualquer uma das teclas de volume.
+Option + Shift + aumentar volume ou Option + Shift + diminuir volume: ajuste o volume do som em etapas menores.
+Option + aumentar brilho do teclado: abra as preferências Teclado. Esse atalho funciona com qualquer uma das teclas de brilho do teclado.
+Option + Shift + aumentar brilho do teclado ou Option + Shift + diminuir brilho do teclado: ajuste o brilho do teclado em etapas menores.
+Tecla Option ao clicar duas vezes: abra o item em outra janela e feche a janela original.
+Tecla Command ao clicar duas vezes: abra uma pasta em outra aba ou janela.
+Tecla Command ao arrastar para outro volume: mova o item arrastado para outro volume em vez de copiá-lo. 
+Tecla Option ao arrastar: copie o item arrastado. O cursor muda quando você arrasta o item.
+Opção + Command ao arrastar: crie um alias do item arrastado. O cursor muda quando você arrasta o item.
+Clique com a tecla Option pressionada em um triângulo de abertura: abra todas as pastas dentro da pasta selecionada. Esse atalho funciona apenas na visualização por lista.
+Clique com a tecla Command pressionada no título de uma janela: veja as pastas que contêm a pasta atual.
+Saiba como usar as teclas Command ou Shift para selecionar vários itens no Finder. 
+Clique no meu Ir na barra de menus do Finder para ver os atalhos para abrir muitas pastas usadas normalmente, como Aplicativos, Documentos, Transferências, Utilitários e iCloud Drive.
+Atalhos de documento
+O comportamento dos atalhos abaixo pode variar conforme o app que você está usando.
+
+Command + B: aplique o efeito de negrito a um texto ou remova-o. 
+Command + I: aplique o efeito de itálico a um texto ou remova-o.
+Command + K: adicione um link da web.
+Command + U: aplique o efeito de sublinhado a um texto ou remova-o.
+Command + T: mostre ou oculte a janela Fontes.
+Command + D: selecione a pasta Mesa em uma caixa de diálogo Abrir ou Salvar.
+Control + Command + D: mostre ou oculte a definição da palavra selecionada.
+Shift + Command + dois pontos (:): mostre a janela "Ortografia e Gramática".
+Command + ponto e vírgula (;): encontre palavras com grafia incorreta no documento.
+Option + Delete: apague a palavra à esquerda do ponto de inserção.
+Control + H: apague o caractere à esquerda do ponto de inserção. Ou use Delete.
+Control + D: apague o caractere à direita do ponto de inserção. Ou use Fn + Delete.
+Fn + Delete: apague adiante nos teclados que não têm a tecla Forward Delete. Ou use Control + D.
+Control + K: apague o texto entre o ponto de inserção e o final do parágrafo ou da linha.
+Fn + seta para cima: Page Up — Role uma página para cima. 
+Fn + seta para baixo: Page Down — Role uma página para baixo.
+Fn + seta para a esquerda: Home — Role para o início de um documento.
+Fn + seta para a direita: End — Role para o final de um documento.
+Command + seta para cima: mova o ponto de inserção para o início do documento.
+Command + seta para baixo: mova o ponto de inserção para o final do documento.
+Command + seta para a esquerda: mova o ponto de inserção para o início da linha atual.
+Command + seta para a direita: mova o ponto de inserção para o final da linha atual.
+Option + seta para a esquerda: mova o ponto de inserção para o início da palavra anterior.
+Option + seta para a direita: mova o ponto de inserção para o final da palavra seguinte.
+Shift + Command + seta para cima: selecione o texto entre o ponto de inserção e o início do documento.
+Shift + Command + seta para baixo: selecione o texto entre o ponto de inserção e o final do documento.
+Shift + Command + seta para a esquerda: selecione o texto entre o ponto de inserção e o início da linha atual.
+Shift + Command + seta para a direita: selecione o texto entre o ponto de inserção e o final da linha atual.
+Shift + seta para cima: estenda a seleção de texto para o caractere mais próximo na mesma localização horizontal da linha de cima.
+Shift + seta para baixo: estenda a seleção de texto para o caractere mais próximo na mesma localização horizontal da linha de baixo.
+Shift + seta para a esquerda: estenda a seleção de texto em um caractere para a esquerda.
+Shift + seta para a direita: estenda a seleção de texto em um caractere para a direita.
+Option + Shift + seta para cima: estenda a seleção de texto até o início do parágrafo atual e, depois, até o início do parágrafo seguinte se for pressionado novamente.
+Option + Shift + seta para baixo: estenda a seleção de texto até o final do parágrafo atual e, depois, até o final do parágrafo seguinte se for pressionado novamente.
+Option + Shift + seta para a esquerda: estenda a seleção de texto até o início da palavra atual e, depois, até o início da palavra seguinte se for pressionado novamente.
+Option + Shift + seta para a direita: estenda a seleção de texto até o final da palavra atual e, depois, até o final da palavra seguinte se for pressionado novamente.
+Control + A: mova para o início da linha ou do parágrafo.
+Control + E: mova para o final da linha ou do parágrafo.
+Control + F: mova um caractere para frente.
+Control + B: mova um caractere para trás.
+Control + L: centralize o cursor ou a seleção na área visível.
+Control + P: mova uma linha para cima.
+Control + N: mova uma linha para baixo.
+Control + O: insira uma nova linha após o ponto de inserção.
+Control + T: troque o caractere após o ponto de inserção pelo caractere no início do ponto de inserção.
+Command + chave esquerda ({): alinhe à esquerda.
+Command + chave direita (}): alinhe à direita.
+Shift + Command + barra vertical (|): alinhe ao centro.
+Option + Command + F: acesse o campo de busca. 
+Option + Command + T: mostre ou oculte uma barra de ferramentas no app.
+Option + Command + C: Copiar Estilo — Copie os ajustes de formatação do item selecionado para a área de transferência.
+Option + Command + V: Colar Estilo — Aplique o estilo copiado ao item selecionado.
+Option + Shift + Command + V: "Colar com o Mesmo Estilo" — Aplique o estilo do conteúdo ao redor ao item colado dentro desse conteúdo.
+Option + Command + I: mostre ou oculte a janela do inspetor.
+Shift + Command + P: Configurar Página — Mostre uma janela para selecionar os ajustes do documento.
+Shift + Command + S: mostre a caixa de diálogo Salvar Como ou duplique o documento atual.
+Shift + Command + sinal de menos (-): diminua o tamanho do item selecionado.
+Shift + Command + sinal de mais (+): aumente o tamanho do item selecionado. Command + sinal de igual (=) realiza a mesma função.
+Shift + Command + sinal de interrogação (?): abra o menu Ajuda.
